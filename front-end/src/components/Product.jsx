@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getEmail, getToken, setGuestCart } from "../helpers/SessionHelper";
 
 const Product = ({ product }) => {
-  const { _id, title, description, thumbnail, price } = product;
+  const { _id, title, description, thumbnail, price, discountPrice } = product;
   const navigate = useNavigate();
 
   // add to cart product
@@ -44,10 +44,12 @@ const Product = ({ product }) => {
       <div className="card-body">
         <h2 className="text-blue-900 text-xl font-bold">{title}</h2>
         <p className=" text-gray-400">{description}</p>
-        <h6 className="font-bold text-right">Price: ${price}</h6>
-        <div className="card-actions justify-end">
-          <button onClick={handleAddToCart} className="btn btn-sm btn-outline btn-primary">
-            Add Cart
+        <div className="flex items-center justify-between">
+          <span className="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
+          <button
+            onClick={handleAddToCart}
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Add to cart
           </button>
         </div>
       </div>

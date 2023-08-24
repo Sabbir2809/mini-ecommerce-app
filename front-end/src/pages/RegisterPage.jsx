@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import Login from "./../assets/images/login.jpg";
 
 const RegisterPage = () => {
   const [inputs, setInputs] = useState({
@@ -52,48 +53,58 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-2">
-        <div className="flex items-center w-full justify-center h-screen">
-          <div className="card w-8/12 card-side bg-white shadow-xl">
-            <div className="card-body justify-center items-center">
-              <form className="w-8/12" onSubmit={handleSubmit}>
-                <h1 className="text-2xl text-center text-blue-500 font-bold my-10">
-                  Welcome To Mini E-Commerce Register Page
-                </h1>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    onChange={handleOnChange}
-                    value={inputs.email}
-                    placeholder="Enter Your Email..."
-                    className="input w-full bg-white rounded-lg input-bordered"
-                  />
-                </div>
-                <br />
-                <div>
-                  <input
-                    type="password"
-                    name="password"
-                    onChange={handleOnChange}
-                    value={inputs.password}
-                    placeholder="Enter Your Password..."
-                    className="input w-full bg-white rounded-lg input-bordered"
-                  />
-                </div>
-                <button className="btn rounded-lg w-full my-4 btn-primary">Sign Up</button>
-                <div>
-                  <p>
-                    Already have an account?{" "}
-                    <Link to={"/login"}>
-                      <strong>Login Now</strong>
-                    </Link>
-                  </p>
-                </div>
-              </form>
+    <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
+      <div className="flex shadow-md">
+        <div
+          className="flex flex-wrap content-center justify-center rounded-l-md bg-white"
+          style={{ width: "24rem", height: "32rem" }}>
+          <form className="w-72" onSubmit={handleSubmit}>
+            <h1 className="text-2xl font-semibold">Welcome To Mini Ecommerce Register Page</h1>
+            <div className="mt-4">
+              <div className="mb-3">
+                <label className="mb-2 block text-xs font-semibold">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  onChange={handleOnChange}
+                  value={inputs.email}
+                  placeholder="Enter your email"
+                  className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                />
+              </div>
+              <div className="mb-3">
+                <label className="mb-2 block text-xs font-semibold">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={handleOnChange}
+                  value={inputs.password}
+                  placeholder="*****"
+                  className="block w-full rounded-md border border-gray-300 focus:border-purple-700 focus:outline-none focus:ring-1 focus:ring-purple-700 py-1 px-1.5 text-gray-500"
+                />
+              </div>
+              <div className="mb-3">
+                <button className="mb-1.5 block w-full text-center text-white bg-purple-700 hover:bg-purple-900 px-2 py-1.5 rounded-md">
+                  Register
+                </button>
+              </div>
             </div>
-          </div>
+            <div className="text-center">
+              <span className="text-xs text-gray-400 font-semibold">Do not have account? </span>
+              <Link to={"/login"} className="text-xs font-semibold text-purple-700">
+                Login
+              </Link>
+            </div>
+          </form>
+        </div>
+        <div
+          className="flex flex-wrap content-center justify-center rounded-r-md"
+          style={{ width: "25rem", height: "32rem" }}>
+          <img
+            className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
+            src={Login}
+            alt="Login Logo"
+          />
         </div>
       </div>
     </div>
