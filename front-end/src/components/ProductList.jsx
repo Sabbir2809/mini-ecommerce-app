@@ -12,7 +12,7 @@ const ProductList = () => {
     (async () => {
       try {
         // get all product api
-        const res = await axios.get("http://localhost:8000/api/products", {
+        const res = await axios.get("https://mini-ecommerce-app.onrender.com/api/products", {
           headers: { token: getToken() },
         });
         // success status

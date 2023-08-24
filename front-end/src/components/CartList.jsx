@@ -19,7 +19,11 @@ const CartList = () => {
         // check token in localStorage
         if (getToken()) {
           // cart-list api
-          const res = await axios.post(`http://localhost:8000/api/cart-list`, postBody, token);
+          const res = await axios.post(
+            `https://mini-ecommerce-app.onrender.com/api/cart-list`,
+            postBody,
+            token
+          );
 
           if (res.data) {
             setCartItems(res.data.data);
@@ -43,13 +47,20 @@ const CartList = () => {
       const token = { headers: { token: getToken() } };
 
       // delete-cart api
-      const res = await axios.delete(`http://localhost:8000/api/delete-cart/${productId}`, token);
+      const res = await axios.delete(
+        `https://mini-ecommerce-app.onrender.com/api/delete-cart/${productId}`,
+        token
+      );
 
       // status success
       if (res.status) {
         toast.success("Remove Cart Successful!");
         if (getToken()) {
-          const res = await axios.post(`http://localhost:8000/api/cart-list`, postBody, token);
+          const res = await axios.post(
+            `https://mini-ecommerce-app.onrender.com/api/cart-list`,
+            postBody,
+            token
+          );
           if (res.data) {
             setCartItems(res.data.data);
           }

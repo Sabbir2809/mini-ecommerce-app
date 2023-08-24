@@ -22,8 +22,8 @@ exports.paymentGateway = async (req, res) => {
       total_amount: productPrice,
       currency: "USD",
       tran_id: tran_id,
-      success_url: `http://localhost:8000/api/payment/success/${tran_id}`,
-      fail_url: `http://localhost:8000/api/payment/fail/${tran_id}`,
+      success_url: `https://mini-ecommerce-app.onrender.com/api/payment/success/${tran_id}`,
+      fail_url: `https://mini-ecommerce-app.onrender.com/api/payment/fail/${tran_id}`,
       cancel_url: "http://localhost:3030/cancel",
       ipn_url: "http://localhost:3030/ipn",
       shipping_method: "Courier",
@@ -90,7 +90,7 @@ exports.paymentSuccess = async (req, res) => {
     );
 
     if (result.modifiedCount > 0) {
-      res.redirect(`http://localhost:5173/api/payment/success/${req.params.transId}`);
+      res.redirect(`https://miniecommerce-app.netlify.app/api/payment/success/${req.params.transId}`);
     }
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });
@@ -103,7 +103,7 @@ exports.paymentFail = async (req, res) => {
     const result = await orderModel.deleteOne({ transactionId: req.params.transId });
 
     if (result.deletedCount) {
-      res.redirect(`http://localhost:5173/api/payment/fail/${req.params.transId}`);
+      res.redirect(`https://miniecommerce-app.netlify.app/api/payment/fail/${req.params.transId}`);
     }
   } catch (error) {
     res.status(500).json({ success: false, error: error.message });

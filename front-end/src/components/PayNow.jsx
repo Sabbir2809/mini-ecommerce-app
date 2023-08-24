@@ -42,7 +42,7 @@ const BuyNow = ({ cartItems }) => {
       inputs.productList = cartItems;
 
       // order api
-      const response = await axios.post("http://localhost:8000/api/order", inputs);
+      const response = await axios.post("https://mini-ecommerce-app.onrender.com/api/order", inputs);
 
       // success status
       if (response.status) {

@@ -33,7 +33,10 @@ const RegisterPage = () => {
     (async () => {
       try {
         // user-register api
-        const { data } = await axios.post(`http://localhost:8000/api/auth/user-register`, inputs);
+        const { data } = await axios.post(
+          `https://mini-ecommerce-app.onrender.com/api/auth/user-register`,
+          inputs
+        );
 
         // success status
         if (data.success) {

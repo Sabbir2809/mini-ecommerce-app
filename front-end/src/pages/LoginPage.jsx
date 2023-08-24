@@ -33,7 +33,10 @@ const LoginPage = () => {
 
     try {
       // user-login api
-      const { data } = await axios.post(`http://localhost:8000/api/auth/user-login`, inputs);
+      const { data } = await axios.post(
+        `https://mini-ecommerce-app.onrender.com/api/auth/user-login`,
+        inputs
+      );
       if (data.success) {
         // set email, token in localStorage
         setToken(data.token);
@@ -47,7 +50,11 @@ const LoginPage = () => {
 
         // check token in localStorage
         if (getToken()) {
-          const res = await axios.post(`http://localhost:8000/api/create-cart`, postBody, token);
+          const res = await axios.post(
+            `https://mini-ecommerce-app.onrender.com/api/create-cart`,
+            postBody,
+            token
+          );
           // success status
           if (res.status) {
             localStorage.removeItem("guestCartItem");

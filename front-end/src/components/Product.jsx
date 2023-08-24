@@ -16,7 +16,11 @@ const Product = ({ product }) => {
 
       // check token in localStorage
       if (getToken()) {
-        const res = await axios.post(`http://localhost:8000/api/create-cart`, postBody, token);
+        const res = await axios.post(
+          `https://mini-ecommerce-app.onrender.com/api/create-cart`,
+          postBody,
+          token
+        );
 
         if (res.status) {
           toast.success("Add To Cart Successful!");

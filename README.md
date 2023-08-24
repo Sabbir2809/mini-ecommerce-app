@@ -1,5 +1,9 @@
 # Mini E-commerce MERN Project
 
+- [Client Side Live Link](https://miniecommerce-app.netlify.app/)
+
+- [Server Side Live Link](https://mini-ecommerce-app.onrender.com/api/products)
+
 1. **Backend Development:** server environment setup & Introduction to npm packages, connect Mongodb with express js, connect MongoDB compass
 1. **Backend Development:** Create user-login API, verify-login API, get product-list API, JWT, mongoose schema, Postman
 1. **Backend Development:** Create create-cart API, remove-cart API, cart-list API, mongoose schema, Postman
