@@ -3,7 +3,6 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { getEmail, getGuestCart, getToken, setEmail, setToken } from "../helpers/SessionHelper";
-import Login from "./../assets/images/login.jpg";
 
 const LoginPage = () => {
   const [inputs, setInputs] = useState({
@@ -75,15 +74,6 @@ const LoginPage = () => {
   return (
     <div className="flex flex-wrap min-h-screen w-full content-center justify-center bg-gray-200 py-10">
       <div className="flex shadow-md">
-        <div
-          className="flex flex-wrap content-center justify-center rounded-r-md"
-          style={{ width: "25rem", height: "32rem" }}>
-          <img
-            className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
-            src={Login}
-            alt="Login Logo"
-          />
-        </div>
         <div
           className="flex flex-wrap content-center justify-center rounded-l-md bg-white"
           style={{ width: "24rem", height: "32rem" }}>

@@ -2,7 +2,6 @@ import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import Login from "./../assets/images/login.jpg";
 
 const RegisterPage = () => {
   const [inputs, setInputs] = useState({
@@ -96,15 +95,6 @@ const RegisterPage = () => {
               </Link>
             </div>
           </form>
-        </div>
-        <div
-          className="flex flex-wrap content-center justify-center rounded-r-md"
-          style={{ width: "25rem", height: "32rem" }}>
-          <img
-            className="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md"
-            src={Login}
-            alt="Login Logo"
-          />
         </div>
       </div>
     </div>
